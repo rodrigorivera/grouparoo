@@ -13,6 +13,9 @@
     "url": "git+https://github.com/grouparoo/grouparoo.git"
   },
   "devDependencies": {
+    "@types/glob": "^8.0.0",
+    "@types/semver": "^7.3.13",
+    "@types/uuid": "^9.0.0",
     "lerna": "4.0.0",
     "lerna-changelog": "2.2.0",
     "npm-check-updates": "12.2.1"
@@ -23,5 +26,8 @@
     "update": "npm-check-updates -u && pnpm exec -- npm-check-updates -u && npm run nuke && pnpm install",
     "heroku-prebuild": "npm install -g pnpm && pnpm --version",
     "heroku-postbuild": "pnpm install && rm -rf ui/*/.next/cache/*"
+  },
+  "dependencies": {
+    "pg-types": "^4.0.0"
   }
 }

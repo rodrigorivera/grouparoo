@@ -32,7 +32,8 @@
     "pg": "8.7.3",
     "pg-format": "1.0.4",
     "pg-hstore": "2.3.4",
-    "postgres-date": "2.1.0"
+    "postgres-date": "2.1.0",
+    "pg-types": "4.0.0"
   },
   "devDependencies": {
     "@grouparoo/core": "0.9.0",
