@@ -28,7 +28,7 @@ import { CommonModel } from "../classes/commonModel";
 import { CLS } from "../modules/cls";
 import { ModelsCache } from "../modules/caches/modelsCache";
 
-export const ModelTypes = ["profile", "account", "event", "custom"] as const;
+export const ModelTypes = ["profile", "account", "event", "p&l", "custom"] as const;
 export type ModelType = typeof ModelTypes[number];
 
 const STATES = ["ready", "deleted"] as const;
@@ -86,6 +86,8 @@ export class GrouparooModel extends CommonModel<GrouparooModel> {
         return "location-arrow";
       case "custom":
         return "database";
+      case "p&l":
+          return "database";
       default:
         throw new Error(`no icon for ${this.type} model`);
     }

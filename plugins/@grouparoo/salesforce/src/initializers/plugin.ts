@@ -5,6 +5,9 @@ import { parallelism } from "./../lib/parallelism";
 import { contactsDestinationConnection } from "../lib/export-contacts/connection";
 import { objectsDestinationConnection } from "../lib/export-objects/connection";
 import { accountsDestinationConnection } from "../lib/export-account/connection";
+import { contactsSourceConnection } from "../lib/import-contacts/connection";
+import { objectsSourceConnection } from "../lib/import-objects/connection";
+import { accountsSourceConnection } from "../lib/import-account/connection";
 
 const packageJSON = require("./../../package.json");
 
@@ -58,6 +61,9 @@ export class Plugins extends Initializer {
         accountsDestinationConnection,
         contactsDestinationConnection,
         objectsDestinationConnection,
+        accountsSourceConnection,
+        contactsSourceConnection,
+        objectsSourceConnection,
       ],
     });
   }

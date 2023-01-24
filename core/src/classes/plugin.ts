@@ -97,6 +97,7 @@ export interface PluginConnection {
     exportRecords?: ExportRecordsPluginMethod;
     processExportedRecords?: ProcessExportedRecordsPluginMethod;
     exportArrayProperties?: ExportArrayPropertiesMethod;
+    importArrayProperties?: ImportArrayPropertiesMethod;
   };
 }
 
@@ -657,3 +658,21 @@ export type ExportArrayPropertiesMethodResponse = string[];
 export interface ConfigTemplateConstructor {
   new (): ConfigTemplate;
 }
+
+/**
+ * Method to return the list of import record properties which can accept array values.
+ * '*' can be used as a wildcard to accept all properties as arrays
+ */
+export interface ImportArrayPropertiesMethod<AppConnection = any> {
+  (argument: {
+    connection: AppConnection;
+    app: App;
+    appId: string;
+    appOptions: SimpleAppOptions;
+    source: Source;
+    sourceId: string;
+    sourceOptions: SimpleSourceOptions;
+  }): Promise<ImportArrayPropertiesMethodResponse>;
+}
+
+export type ImportArrayPropertiesMethodResponse = string[];
