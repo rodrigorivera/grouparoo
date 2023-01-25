@@ -1,7 +1,7 @@
 import { SourceMappingOptionsMethod } from "@grouparoo/core";
 import { sourceModel } from "./model";
 
-import { getSourceMappingOptions } from "../source/mapping";
+import { getSourceMappingOptions } from "../import/mapping";
 
 export const sourceMappingOptions: SourceMappingOptionsMethod =
   async ({ appId, appOptions, source, sourceOptions }) => {

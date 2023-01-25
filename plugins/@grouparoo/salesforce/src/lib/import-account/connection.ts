@@ -1,17 +1,17 @@
-import { PluginConnection, DestinationSyncMode } from "@grouparoo/core";
+import { PluginConnection, SourceSyncMode } from "@grouparoo/core";
 import { importRecords } from "./importRecords";
 
 import { sourceOptions } from "./sourceOptions";
 import { sourceMappingOptions } from "./sourceMappingOptions";
 import { importArrayProperties } from "../import/importArrayProperties";
 
-export const accountsSupportedSyncModes: DestinationSyncMode[] = [
+export const accountsSupportedSyncModes: SourceSyncMode[] = [
   "sync",
   "additive",
   "enrich",
 ];
 
-export const accountsDestinationConnection: PluginConnection = {
+export const accountsSourceConnection: PluginConnection = {
   name: "salesforce-import-accounts",
   displayName: "Salesforce Import Accounts",
   direction: "import",

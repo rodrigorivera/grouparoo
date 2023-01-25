@@ -4,7 +4,7 @@ import { SourceOptionsMethod } from "@grouparoo/core";
 export const sourceOptions: SourceOptionsMethod = async ({
   appId,
   appOptions,
-  sourceOptions,
+  destinationOptions: sourceOptions,
 }) => {
   return getSourceOptions({
     appId,
@@ -13,6 +13,11 @@ export const sourceOptions: SourceOptionsMethod = async ({
     fieldsOptions: [
       {
         fieldName: "primaryKey",
+        fieldValue: "Contact",
+        specialFields: ["Email"],
+      },
+      {
+        fieldName: "accountKey",
         fieldValue: "Account",
         specialFields: ["AccountNumber", "Name"],
       },

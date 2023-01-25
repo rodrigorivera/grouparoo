@@ -62,6 +62,10 @@ export interface BootstrapUniquePropertyParams {
 export interface SimpleSourceOptions extends OptionHelper.SimpleOptions {}
 export interface SourceMapping extends MappingHelper.Mappings {}
 
+/* Adding Sync from APIs */
+const SYNC_MODES = ["sync", "additive", "enrich"] as const;
+export type SourceSyncMode = typeof SYNC_MODES[number];
+
 const STATES = ["draft", "ready", "deleted"] as const;
 const STATE_TRANSITIONS = [
   {
